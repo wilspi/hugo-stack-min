@@ -1,0 +1,20 @@
+<style>
+    /// Overwrite CSS variable
+    :root {
+        --article-font-family: "Manrope", sans-serif;
+        --code-font-family: 'Fira Code', monospace;
+        --base-font-family: 'Noto Sans', monospace;
+    }
+</style>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Fira+Code&family=Manrope&family=Noto+Sans&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>

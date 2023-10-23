@@ -1,0 +1,97 @@
+
+<!--        <script src="https://utteranc.es/client.js"-->
+<!--                repo="wilspi/comments-zeroes"-->
+<!--                issue-term="pathname"-->
+<!--                label="comment ✨💬✨"-->
+<!--                theme="github-light"-->
+<!--                crossorigin="anonymous"-->
+<!--                async>-->
+<!--        </script>-->
+<!--{{ (printf "%s" .Site.Params.comments.utterances.repo) }}-->
+<!--{{ (printf "%s" .Site.Params.comments.utterances.issueTerm) }}-->
+<div class="utterances-container">
+        <!-- added share-buttons here -->
+<!--        {{ partial "widget/share-buttons" . }}-->
+<!--        <hr style="margin-left: 25%; margin-right: 25%;">-->
+
+        <script src="https://utteranc.es/client.js"
+                repo="{{ .Site.Params.comments.utterances.repo }}"
+                issue-term="{{ .Site.Params.comments.utterances.issueTerm }}"
+                {{ with .Site.Params.comments.utterances.label }}
+                label="{{ . }}"
+                {{ end }}
+                crossorigin="anonymous"
+                theme="github-dark"
+                async>
+        </script>
+
+
+        <style>
+                .utterances-container {
+                        background-color: var(--card-background);
+                        border-radius: var(--card-border-radius);
+                        box-shadow: var(--shadow-l1);
+                        padding: var(--card-padding);
+                        margin-bottom: var(--section-separation);
+                }
+                .utterances {
+                        max-width: unset;
+                }
+                /*.timeline-header {*/
+                /*        display: none;*/
+                /*}*/
+        </style>
+
+        <script>
+            function setUtterancesTheme(theme) {
+
+                let utterances = document.querySelector('.utterances iframe');
+                if (utterances) {
+                        // utterances.onload = () => {
+                        //         console.log("iframe loaded");
+                        //         utterances.contentWindow.postMessage(
+                        //                 {
+                        //                         type: 'set-theme',
+                        //                         theme: `github-${theme}`
+                        //                 },
+                        //                 'https://utteranc.es'
+                        //         );
+                        // };
+                        console.log("te");
+                        console.log(utterances);
+                    utterances.contentWindow.postMessage(
+                        {
+                            type: 'set-theme',
+                            theme: `github-${theme}`
+                        },
+                        'https://utteranc.es'
+                    );
+                }
+            }
+
+
+
+
+            // let utterances = document.querySelector('.utterances iframe');
+            // utterances.addEventListener("load", function() {
+            //     setUtterancesTheme(document.documentElement.dataset.scheme)
+            // });
+
+            addEventListener("load", function() {
+                console.log("de");
+                setUtterancesTheme(document.documentElement.dataset.scheme)
+            });
+
+            addEventListener('message', event => {
+                if (event.origin !== 'https://utteranc.es') return;
+                console.log("be");
+                // setUtterancesTheme(document.documentElement.dataset.scheme)
+            });
+
+            window.addEventListener('onColorSchemeChange', (e) => {
+                    console.log("ce");
+                setUtterancesTheme(e.detail)
+            })
+            // $(".utterances-frame").contents().find(".timeline-header").attr("style","display:none");
+        </script>
+</div>
