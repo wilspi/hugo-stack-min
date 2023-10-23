@@ -1,11 +1,7 @@
 /*!
-*   Hugo Theme Stack
-*
-*   @author: Jimmy Cai
-*   @website: https://jimmycai.com
-*   @link: https://github.com/CaiJimmy/hugo-theme-stack
+*   Hugo Stack Min
 */
-import StackGallery from "ts/gallery";
+// import StackGallery from "ts/gallery";
 import { getColor } from 'ts/color';
 import menu from 'ts/menu';
 import createElement from 'ts/createElement';
@@ -22,7 +18,7 @@ let Stack = {
 
         const articleContent = document.querySelector('.article-content') as HTMLElement;
         if (articleContent) {
-            new StackGallery(articleContent);
+//             new StackGallery(articleContent);
             setupSmoothAnchors();
             setupScrollspy();
         }
