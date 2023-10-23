@@ -1,1 +1,79 @@
 /* Place your custom SCSS in HUGO_SITE_FOLDER/assets/scss/custom.scss */
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+
+    &:hover {
+        color: var(--accent-color-darker);
+    }
+
+    &.link {
+        box-shadow: 0px -2px 0px rgba(var(--link-background-color), var(--link-background-opacity)) inset;
+        transition: all 0.3s ease;
+
+        &:hover {
+            box-shadow: 0px -10px 0px rgba(var(--link-background-color), var(--link-background-opacity-hover)) inset;
+        }
+    }
+}
+
+.section-title {
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--body-text-color);
+
+    a {
+        color: var(--body-text-color);
+    }
+}
+
+/* https://discourse.gohugo.io/t/responsive-tables-in-markdown/10639/9 */
+table {
+    display: block;
+    overflow-x: auto;
+}
+
+/* https://stackoverflow.com/a/65662680 */
+img {
+    pointer-events: none;
+}
+
+/* share buttons css (though buttons html exist in comments partial) */
+.share-buttons {
+    //margin: 14px 0;
+    padding-inline-start: var(--radius);
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+
+    //background-color: var(--card-background);
+    //border-radius: var(--card-border-radius);
+    //box-shadow: var(--shadow-l1);
+    //padding: var(--card-padding);
+    margin-bottom: var(--section-separation);
+
+    a {
+        margin-top: 10px;
+        //padding: 5px;
+    }
+
+    a:not(:last-of-type) {
+        margin-inline-end: 12px;
+    }
+
+    a svg {
+        height: 30px;
+        width: 30px;
+        fill: currentColor;
+        transition: transform .1s;
+    }
+
+    svg:active {
+        transform: scale(.96);
+    }
+}

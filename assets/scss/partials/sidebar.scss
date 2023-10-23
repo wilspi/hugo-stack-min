@@ -83,12 +83,15 @@
     }
 }
 
+// .site-info {
 .sidebar header {
     z-index: 1;
     transition: box-shadow 0.5s ease;
     display: flex;
     flex-direction: column;
     gap: var(--sidebar-element-separation);
+
+//     padding: 15px;
 
     @include respond(md) {
         padding: 0;
@@ -100,6 +103,7 @@
         width: var(--sidebar-avatar-size);
         height: var(--sidebar-avatar-size);
         flex-shrink: 0;
+//         margin-bottom: var(--sidebar-element-separation);
 
         .site-logo {
             width: 100%;
@@ -133,7 +137,18 @@
     .site-name {
         color: var(--accent-color);
         margin: 0;
-        font-size: 1.6rem;
+        font-size: 4rem;
+
+//         @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+//         font-family: 'Lobster', sans-serif;
+
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        font-family: 'Pacifico', cursive;
+
+
+//         @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+//         font-family: 'Josefin Sans', sans-serif;
+
 
         @include respond(2xl) {
             font-size: 1.8rem;
@@ -145,12 +160,36 @@
         font-weight: normal;
         margin: 0;
         font-size: 1.4rem;
+//         margin: 10px 0;
+//         font-size: 1.6rem;
+
+//         @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+//         font-family: 'Lobster', sans-serif;
+
+//         @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+//         font-family: 'Pacifico', cursive;
 
         @include respond(2xl) {
             font-size: 1.6rem;
         }
     }
 }
+
+// .sidebar {
+//     .widget {
+//         margin-bottom: var(--section-separation);
+//         margin-top: var(--section-separation);
+//
+//         &:not(:last-of-type):after {
+//             content: "";
+//             width: 100px;
+//             height: 2px;
+//             background-color: var(--body-text-color);
+//             display: block;
+//             margin-top: var(--section-separation);
+//         }
+//     }
+// }
 
 [data-scheme="dark"] {
     #dark-mode-toggle {

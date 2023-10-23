@@ -13,6 +13,10 @@
         box-shadow: var(--shadow-l1);
         overflow: hidden;
 
+//         &.main-article {
+//             margin-bottom: var(--section-separation);
+//         }
+
         .article-header {
             .article-image {
                 img {
@@ -27,6 +31,9 @@
                 padding: var(--card-padding);
                 padding-bottom: 0;
             }
+
+//             margin-bottom: var(--section-separation);
+//             margin-bottom: 60px;
         }
 
         .article-content {
@@ -62,6 +69,7 @@
                 svg {
                     width: 20px;
                     height: 20px;
+//                     margin-right: 15px;
                     stroke-width: 1.33;
                 }
             }
@@ -84,6 +92,110 @@
         }
     }
 }
+
+// #article-toolbar {
+//     display: flex;
+//     align-items: center;
+//     margin: 20px 0;
+//
+//     @include respond(md) {
+//         display: none;
+//     }
+//
+//     .back-home {
+//         background: var(--card-background);
+//         border-radius: var(--tag-border-radius);
+//         color: var(--card-text-color-tertiary);
+//         margin-right: 30px;
+//         display: inline-flex;
+//         align-items: center;
+//         font-size: 1.4rem;
+//         text-transform: uppercase;
+//         padding: 10px 20px 10px 15px;
+//
+//         transition: box-shadow 0.3s ease;
+//
+//         box-shadow: var(--shadow-l1);
+//
+//         &:hover {
+//             box-shadow: var(--shadow-l2);
+//         }
+//
+//         svg {
+//             margin-right: 5px;
+//             width: 20px;
+//             height: 20px;
+//         }
+//
+//         span {
+//             font-weight: 500;
+//             white-space: nowrap;
+//         }
+//     }
+// }
+//
+// .article-page.has-toc {
+//     scroll-behavior: smooth;
+//
+//     .left-sidebar {
+//         display: none;
+//     }
+//
+//     .right-sidebar {
+//         width: 100%;
+//         padding: 0;
+//         display: none;
+//
+//         @include respond(xl) {
+//             display: block;
+//             top: var(--main-top-padding);
+//         }
+//     }
+//
+//     #article-toolbar {
+//         display: block;
+//
+//         @include respond(md) {
+//             padding: 0;
+//         }
+//
+//         @include respond(xl) {
+//             margin-top: 0;
+//             position: sticky;
+//             top: var(--main-top-padding);
+//             flex-shrink: 1;
+//
+//             a {
+//                 background: transparent;
+//                 box-shadow: none;
+//                 border: 1px solid var(--body-text-color);
+//                 width: 100%;
+//                 margin-right: 0;
+//
+//                 svg {
+//                     flex-shrink: 0;
+//                 }
+//             }
+//         }
+//     }
+//
+//     .main-container {
+//         align-items: start;
+//         flex-direction: column;
+//
+//         @include respond(xl) {
+//             flex-direction: row;
+//         }
+//     }
+//
+//     .main {
+//         padding-top: 0;
+//
+//         @include respond(xl) {
+//             padding-top: var(--main-top-padding);
+//         }
+//     }
+// }
 
 .widget--toc {
     background-color: var(--card-background);
@@ -174,6 +286,10 @@
     }
 }
 
+// .related-contents--wrapper {
+//     margin-bottom: var(--section-separation);
+// }
+
 .related-content {
     overflow-x: auto;
     padding-bottom: 15px;
@@ -219,9 +335,22 @@
     h4,
     h5,
     h6 {
-        margin-inline-start: calc((var(--card-padding)) * -1);
-        padding-inline-start: calc(var(--card-padding) - var(--heading-border-size));
-        border-inline-start: var(--heading-border-size) solid var(--accent-color);
+        margin-left: calc((var(--card-padding)) * -1);
+        padding-left: calc(var(--card-padding) - var(--heading-border-size));
+        border-left: var(--heading-border-size) solid var(--accent-color);
+//         margin-top: 60px;
+    }
+
+    h1:hover .anchor,
+    h2:hover .anchor,
+    h3:hover .anchor,
+    h4:hover .anchor,
+    h5:hover .anchor,
+    h6:hover .anchor {
+        display: inline-flex;
+        color: var(--secondary);
+        margin-inline-start: 8px;
+        font-weight: 500
     }
 
     figure {
@@ -283,6 +412,10 @@
 
         figure {
             margin: 0;
+
+//             & + figure {
+//                 margin-left: 10px;
+//             }
         }
     }
 

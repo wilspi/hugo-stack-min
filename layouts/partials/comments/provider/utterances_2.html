@@ -9,6 +9,10 @@
 <!--        </script>-->
 <!--{{ (printf "%s" .Site.Params.comments.utterances.repo) }}-->
 <!--{{ (printf "%s" .Site.Params.comments.utterances.issueTerm) }}-->
+
+
+<!--{{- $style := resources.Get "scss/partials/comments/disqusjs.scss" | resources.ToCSS | minify -}}-->
+
 <div class="utterances-container">
         <!-- added share-buttons here -->
 <!--        {{ partial "widget/share-buttons" . }}-->
