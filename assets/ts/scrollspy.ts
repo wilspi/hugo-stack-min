@@ -55,6 +55,7 @@ function setupScrollspy() {
         return;
     }
 
+
     let scrollableNavigation = document.querySelector(tocQuery) as HTMLElement | undefined;
     if (!scrollableNavigation) {
         console.warn("No toc matched query", tocQuery);

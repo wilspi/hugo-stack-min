@@ -137,22 +137,12 @@
     .site-name {
         color: var(--accent-color);
         margin: 0;
-        font-size: 4rem;
+        font-size: 3rem;
+        font-family: var(--site-title-font-family);
 
-//         @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-//         font-family: 'Lobster', sans-serif;
-
-        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-        font-family: 'Pacifico', cursive;
-
-
-//         @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
-//         font-family: 'Josefin Sans', sans-serif;
-
-
-        @include respond(2xl) {
-            font-size: 1.8rem;
-        }
+//         @include respond(2xl) {
+//             font-size: 1.8rem;
+//         }
     }
 
     .site-description {
@@ -162,12 +152,6 @@
         font-size: 1.4rem;
 //         margin: 10px 0;
 //         font-size: 1.6rem;
-
-//         @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-//         font-family: 'Lobster', sans-serif;
-
-//         @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-//         font-family: 'Pacifico', cursive;
 
         @include respond(2xl) {
             font-size: 1.6rem;
