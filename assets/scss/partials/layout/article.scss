@@ -33,7 +33,7 @@
             }
 
 //             margin-bottom: var(--section-separation);
-//             margin-bottom: 60px;
+            margin-bottom: 60px;
         }
 
         .article-content {
@@ -338,7 +338,7 @@
         margin-left: calc((var(--card-padding)) * -1);
         padding-left: calc(var(--card-padding) - var(--heading-border-size));
         border-left: var(--heading-border-size) solid var(--accent-color);
-//         margin-top: 60px;
+        margin-top: 60px;
     }
 
     h1:hover .anchor,

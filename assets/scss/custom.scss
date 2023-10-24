@@ -1,47 +1,47 @@
 /* Place your custom SCSS in HUGO_SITE_FOLDER/assets/scss/custom.scss */
 
-/* https://discourse.gohugo.io/t/responsive-tables-in-markdown/10639/9 */
-table {
-    display: block;
-    overflow-x: auto;
-}
+// /* https://discourse.gohugo.io/t/responsive-tables-in-markdown/10639/9 */
+// table {
+//     display: block;
+//     overflow-x: auto;
+// }
 
 /* https://stackoverflow.com/a/65662680 */
 img {
     pointer-events: none;
 }
 
-/* share buttons css (though buttons html exist in comments partial) */
-.share-buttons {
-    //margin: 14px 0;
-    padding-inline-start: var(--radius);
-    display: flex;
-    justify-content: center;
-    overflow-x: auto;
-
-    //background-color: var(--card-background);
-    //border-radius: var(--card-border-radius);
-    //box-shadow: var(--shadow-l1);
-    //padding: var(--card-padding);
-    margin-bottom: var(--section-separation);
-
-    a {
-        margin-top: 10px;
-        //padding: 5px;
-    }
-
-    a:not(:last-of-type) {
-        margin-inline-end: 12px;
-    }
-
-    a svg {
-        height: 30px;
-        width: 30px;
-        fill: currentColor;
-        transition: transform .1s;
-    }
-
-    svg:active {
-        transform: scale(.96);
-    }
-}
+// /* share buttons css (though buttons html exist in comments partial) */
+// .share-buttons {
+//     //margin: 14px 0;
+//     padding-inline-start: var(--radius);
+//     display: flex;
+//     justify-content: center;
+//     overflow-x: auto;
+//
+//     //background-color: var(--card-background);
+//     //border-radius: var(--card-border-radius);
+//     //box-shadow: var(--shadow-l1);
+//     //padding: var(--card-padding);
+//     margin-bottom: var(--section-separation);
+//
+//     a {
+//         margin-top: 10px;
+//         //padding: 5px;
+//     }
+//
+//     a:not(:last-of-type) {
+//         margin-inline-end: 12px;
+//     }
+//
+//     a svg {
+//         height: 30px;
+//         width: 30px;
+//         fill: currentColor;
+//         transition: transform .1s;
+//     }
+//
+//     svg:active {
+//         transform: scale(.96);
+//     }
+// }
