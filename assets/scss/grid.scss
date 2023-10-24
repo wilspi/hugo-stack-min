@@ -5,14 +5,20 @@
     .left-sidebar {
         order: -3;
         max-width: var(--left-sidebar-max-width);
+
+        /// Dont display left sidebar when min-width: md
+        @include respond(md) {
+            display: none;
+        }
+
     }
 
     .right-sidebar {
         order: -1;
         max-width: var(--right-sidebar-max-width);
 
-        /// Display right sidebar when min-width: lg
-        @include respond(lg) {
+        /// Display right sidebar when min-width: md
+        @include respond(md) {
             display: flex;
         }
     }
