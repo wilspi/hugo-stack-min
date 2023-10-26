@@ -8,6 +8,7 @@
             {{ $showDate := not .Date.IsZero }}
             {{ $showFooter := or $showDate $showReadingTime }}
             {{ if $showFooter }}
+
             <footer class="article-time">
                 {{ if $showDate }}
                     <div>
