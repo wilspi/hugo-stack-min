@@ -48,6 +48,7 @@
 		 {{ with $Height }}height="{{ . }}"{{ end }}
 		 {{ with $Srcset }}srcset="{{ . }}"{{ end }}
 		 loading="lazy"
+		 decoding="async"
 		 {{ with $alt }}alt="{{ . }}"{{ end }}>
 	{{ with $alt }}
 	<figcaption>{{ . | markdownify }}</figcaption>
