@@ -59,6 +59,7 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 */
 :root {
     --card-background: #f9f9f9;
+    --card-background-opaque: rgba(249, 249, 249, 0.3);
     --card-background-selected: #dadada;
     --card-text-color-main: #000;
     --card-text-color-secondary: #646464;
@@ -84,6 +85,7 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 
     &[data-scheme="dark"] {
         --card-background: #323232;
+        --card-background-opaque: rgba(50, 50 ,50, 0.3);
         --card-background-selected: rgba(255, 255, 255, 0.16);
         --card-text-color-main: #f9f9f9;
         --card-text-color-secondary: #d1d1d1;

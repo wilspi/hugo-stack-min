@@ -310,6 +310,12 @@
             margin: 0;
         }
 
+        .article-title span {
+            background-color: var(--card-background-opaque);
+            padding: 2px;
+        }
+
+
         &.has-image {
             .article-details {
                 padding: 20px;
