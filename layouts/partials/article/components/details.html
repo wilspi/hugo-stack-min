@@ -1,11 +1,14 @@
-<div class="article-details">
-<!--    {{ partialCached "article/components/tags" . .RelPermalink }}-->
+{{- $scope := default "homepage" .Scope -}}
+{{- $context := .Context -}}
 
-<!--    {{ if .Params.categories }}-->
+<div class="article-details">
+<!--    {{ partialCached "article/components/tags" $context $context.RelPermalink }}-->
+
+<!--    {{ if $context.Params.categories }}-->
 <!--    <header class="article-category">-->
-<!--        {{ range (.GetTerms "categories") }}-->
-<!--            <a href="{{ .RelPermalink }}" {{ with .Params.style }}style="background-color: {{ .background }}; color: {{ .color }};"{{ end }}>-->
-<!--                {{ .LinkTitle }}-->
+<!--        {{ range ($context.GetTerms "categories") }}-->
+<!--            <a href="{{ $context.RelPermalink }}" {{ with $context.Params.style }}style="background-color: {{ .background }}; color: {{ .color }};"{{ end }}>-->
+<!--                {{ $context.LinkTitle }}-->
 <!--            </a>-->
 <!--        {{ end }}-->
 <!--    </header>-->
@@ -13,28 +16,32 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="{{ .RelPermalink }}">
-                {{- .Title -}}
-            </a>
+            {{- if ne .Scope "homepage" -}}
+                {{- $context.Title -}}
+            {{- else -}}
+                <a href="{{ $context.RelPermalink }}" >
+                    {{- $context.Title -}}
+                </a>
+            {{- end -}}
         </h2>
 
-        {{ with .Params.description }}
+        {{ with $context.Params.description }}
         <h3 class="article-subtitle">
             {{ . }}
         </h3>
         {{ end }}
     </div>
 
-    {{ $showReadingTime := .Params.readingTime | default (.Site.Params.article.readingTime) }}
-    {{ $showDate := and (not .Date.IsZero) (.Param "ShowDateOnPost" | default false) }}
+    {{ $showReadingTime := $context.Params.readingTime | default ($context.Site.Params.article.readingTime) }}
+    {{ $showDate := and (not $context.Date.IsZero) ($context.Param "ShowDateOnPost" | default false) }}
     {{ $showFooter := or $showDate $showReadingTime }}
     {{ if $showFooter }}
     <footer class="article-time">
         {{ if $showDate }}
             <div>
                 {{ partial "helper/icon" "date" }}
-                <time class="article-time--published" datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>
-                    {{- .Date.Format (or .Site.Params.dateFormat.published "Jan 02, 2006") -}}
+                <time class="article-time--published" datetime='{{ $context.Date.Format "2006-01-02T15:04:05Z07:00" }}'>
+                    {{- $context.Date.Format (or $context.Site.Params.dateFormat.published "Jan 02, 2006") -}}
                 </time>
             </div>
         {{ end }}
@@ -43,19 +50,19 @@
             <div>
                 {{ partial "helper/icon" "clock" }}
                 <time class="article-time--reading">
-                    {{ T "article.readingTime" .ReadingTime }}
+                    {{ T "article.readingTime" $context.ReadingTime }}
                 </time>
             </div>
         {{ end }}
     </footer>
     {{ end }}
 
-    {{ if .IsTranslated }}
+    {{ if $context.IsTranslated }}
         <footer class="article-translations">
             {{ partial "helper/icon" "language" }}
             <div>
-                {{ range .Translations }}
-                    <a href="{{ .Permalink }}" class="link">{{ .Language.LanguageName }}</a>
+                {{ range $context.Translations }}
+                    <a href="{{ $context.Permalink }}" class="link">{{ $context.Language.LanguageName }}</a>
                 {{ end }}
             </div>
         </footer>
