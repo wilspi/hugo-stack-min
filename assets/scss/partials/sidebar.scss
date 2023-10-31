@@ -176,7 +176,7 @@
 // }
 
 [data-scheme="dark"] {
-    #dark-mode-toggle {
+    #dark-mode-toggle-left, #dark-mode-toggle-right {
         color: var(--accent-color);
         font-weight: 700;
 
@@ -190,7 +190,7 @@
     }
 }
 
-#dark-mode-toggle {
+#dark-mode-toggle-left, #dark-mode-toggle-right {
     margin-top: auto;
     color: var(--body-text-color);
     display: flex;

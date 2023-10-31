@@ -1,4 +1,7 @@
-{{- with .Site.Menus.social -}}
+{{- $side := default "left" .Side -}}
+{{- $context := .Context -}}
+
+{{- with $context.Site.Menus.social -}}
     <ol class="social-menu">
         {{ range . }}
             <li>
@@ -19,8 +22,8 @@
 {{- end -}}
 
 <ol class="menu" id="main-menu">
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.main }}
+    {{ $currentPage := $context }}
+    {{ range $context.Site.Menus.main }}
     {{ $active := or (eq $currentPage.Title .Name) (or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .)) }}
     <li {{ if $active }} class='current' {{ end }}>
         <a href='{{ .URL }}' {{ if eq .Params.newTab true }}target="_blank"{{ end }}>
@@ -36,28 +39,24 @@
     </li>
     {{ end }}
 
-    <div class="menu-bottom-section">
-        {{- $currentLanguageCode := .Language.Lang -}}
-        {{ with .Site.Home.AllTranslations }}
-            <li id="i18n-switch">
-                {{ partial "helper/icon" "language" }}
-                <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
-                    {{ range . }}
-                        <option value="{{ .Permalink }}" {{ if eq .Language.Lang $currentLanguageCode }}selected{{ end }}>{{ .Language.LanguageName }}</option>
-                    {{ end }}
-                </select>
-            </li>
-        {{ end }}
+    {{- $currentLanguageCode := $context.Language.Lang -}}
+    {{ with $context.Site.Home.AllTranslations }}
+        <li id="i18n-switch">
+            {{ partial "helper/icon" "language" }}
+            <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                {{ range . }}
+                    <option value="{{ .Permalink }}" {{ if eq .Language.Lang $currentLanguageCode }}selected{{ end }}>{{ .Language.LanguageName }}</option>
+                {{ end }}
+            </select>
+        </li>
+    {{ end }}
 
-        {{/*
-<!--        commenting out because this is called twice, need to fix this -->
-        {{ if (default false .Site.Params.colorScheme.toggle) }}
-            <li id="dark-mode-toggle">
-                {{ partial "helper/icon" "toggle-left" }}
-                {{ partial "helper/icon" "toggle-right" }}
-                <span>{{ T "darkMode" }}</span>
-            </li>
-        {{ end }}
-        */}}
-    </div>
+    {{ if (default true $context.Site.Params.colorScheme.toggle) }}
+        <li id="dark-mode-toggle-{{ $side }}">
+            {{ partial "helper/icon" "toggle-left" }}
+            {{ partial "helper/icon" "toggle-right" }}
+            <span>{{ T "darkMode" }}</span>
+        </li>
+    {{ end }}
+
 </ol>

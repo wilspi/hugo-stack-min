@@ -6,5 +6,5 @@
     </button>
 
     {{ partial "sidebar/side-header.html" . }}
-    {{ partial "sidebar/side-menus.html" . }}
+    {{ partial "sidebar/side-menus.html" (dict "Context" . "Side" "left") }}
 </aside>

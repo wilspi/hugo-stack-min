@@ -14,5 +14,5 @@
         {{ end }}
     {{ end }}
 
-    {{ partial "sidebar/side-menus.html" $context }}
+    {{ partial "sidebar/side-menus.html" (dict "Context" $context "Side" "right") }}
 </aside>
