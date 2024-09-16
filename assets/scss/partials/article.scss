@@ -37,9 +37,31 @@
         @for $i from 1 through length($defaultTagBackgrounds) {
             &:nth-child(#{length($defaultTagBackgrounds)}n + #{$i}) {
                 .article-category a {
-                    background: nth($defaultTagBackgrounds, $i);
-                    color: nth($defaultTagColors, $i);
+//                     background: nth($defaultTagBackgrounds, $i);
+//                     color: nth($defaultTagColors, $i);
+                    color: var(--accent-color-text);
+                    background-color: var(--accent-color);
                 }
+
+//                 // changing random colors
+//                 .article-category a {
+//                     //background: #545454;
+//                     //color: #d5d5d5;
+//                     color: var(--accent-color-text);
+//                     background-color: var(--accent-color);
+//                     padding: 8px 16px;
+//                     border-radius: var(--tag-border-radius);
+//                     display: inline-block;
+//                     font-size: 1.4rem;
+//                     margin-right: 10px;
+//                     margin-bottom: 10px;
+//                     transition: background-color 0.5s ease;
+//
+//                     &:hover {
+//                         color: var(--accent-color-text);
+//                         background-color: var(--accent-color-darker);
+//                     }
+//                 }
             }
         }
     }
@@ -57,12 +79,9 @@
     font-family: var(--article-font-family);
     font-weight: 600;
     margin: 0;
+//     margin: 10px 0;
     color: var(--card-text-color-main);
-    font-size: 2.2rem;
-
-    @include respond(xl) {
-        font-size: 2.4rem;
-    }
+    font-size: 3rem;
 
     a {
         color: var(--card-text-color-main);
@@ -71,6 +90,10 @@
             color: var(--card-text-color-main);
         }
     }
+//
+//     & + .article-subtitle {
+//         margin-top: 0;
+//     }
 }
 
 .article-subtitle {
@@ -78,6 +101,7 @@
     color: var(--card-text-color-secondary);
     line-height: 1.5;
     margin: 0;
+//     margin: 5px 0;
     font-size: 1.75rem;
     @include respond(xl) {
         font-size: 2rem;
@@ -93,11 +117,15 @@
 .article-time,
 .article-translations {
     display: flex;
+//     align-items: center;
     color: var(--card-text-color-tertiary);
     gap: 15px;
+//     margin-top: 10px;
+//     flex-wrap: wrap;
 
     svg {
         vertical-align: middle;
+//         margin-right: 15px;
         width: 20px;
         height: 20px;
         stroke-width: 1.33;
@@ -139,6 +167,8 @@
         border-radius: var(--tag-border-radius);
         display: inline-block;
         font-size: 1.4rem;
+//         margin-right: 10px;
+//         margin-bottom: 10px;
         transition: background-color 0.5s ease;
 
         &:hover {
@@ -158,6 +188,10 @@
     @include respond(md) {
         --image-size: 60px;
     }
+//
+//     & + .pagination {
+//         margin-top: var(--section-separation);
+//     }
 
     article {
         & > a {
@@ -174,6 +208,7 @@
         .article-details {
             flex-grow: 1;
             padding: 0;
+//             padding-right: 15px;
             min-height: var(--image-size);
             gap: 10px;
         }
@@ -230,7 +265,7 @@
             }
 
             .article-title {
-                color: #fff;
+                color: #f2f2f2;
             }
         }
 

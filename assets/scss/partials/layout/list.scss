@@ -5,14 +5,19 @@
     box-shadow: var(--shadow-l1);
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: calc(var(--section-separation) / 2);
 
     --separation: 15px;
 
     .section-term {
         font-size: 2.2rem;
         margin: 0;
+//         margin-top: calc(var(--separation) / 2);
         color: var(--card-text-color-main);
+//
+//         & + .section-description {
+//             margin-top: var(--separation);
+//         }
     }
 
     .section-description {
@@ -27,6 +32,7 @@
         display: flex;
         flex-direction: column;
         gap: 8px;
+        //         margin-right: 20px;
     }
 
     .section-image {
@@ -46,6 +52,7 @@
 }
 
 .subsection-list {
+//     margin-bottom: var(--section-separation);
     overflow-x: auto;
 
     .article-list--tile {

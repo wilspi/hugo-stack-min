@@ -1,7 +1,12 @@
 {{ define "main" }}
     <div class="not-found-card">
-        <h1 class="article-title">{{ T "notFound.title" }}</h1>
-        <h2 class="article-subtitle">{{ T "notFound.subtitle" }}</h2>
+        <h1 class="article-title">404: {{ T "notFound.title" }}</h1>
+        <img src="/images/meme-face-1.png" alt="404: not found">
+        <h2 class="article-subtitle"><a href="/p/http-status-codes/">{{ T "notFound.subtitle" }}</a></h2>
     </div>
     {{ partialCached "footer/footer" . }}
+{{ end }}
+
+{{ define "right-sidebar" }}
+    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "page") }}
 {{ end }}

@@ -21,12 +21,12 @@
     --emoji-size: 40px;
     --emoji-font-size: 20px;
 
-    @include respond(md) {
-        width: auto;
-        padding-top: var(--main-top-padding);
-        padding-bottom: var(--main-top-padding);
-        max-height: 100vh;
-    }
+//     @include respond(md) {
+//         width: auto;
+//         padding-top: var(--main-top-padding);
+//         padding-bottom: var(--main-top-padding);
+//         max-height: 100vh;
+//     }
 
     @include respond(2xl) {
         --sidebar-avatar-size: 120px;
@@ -44,7 +44,7 @@
         --emoji-font-size: 15px;
 
         header {
-            @include respond(lg) {
+            @include respond(md) {
                 flex-direction: row;
             }
 
@@ -77,18 +77,21 @@
         top: 0;
     }
 
-    @include respond(lg) {
+    @include respond(md) {
         padding-top: var(--main-top-padding);
         padding-bottom: var(--main-top-padding);
     }
 }
 
+// .site-info {
 .sidebar header {
     z-index: 1;
     transition: box-shadow 0.5s ease;
     display: flex;
     flex-direction: column;
     gap: var(--sidebar-element-separation);
+
+//     padding: 15px;
 
     @include respond(md) {
         padding: 0;
@@ -100,6 +103,7 @@
         width: var(--sidebar-avatar-size);
         height: var(--sidebar-avatar-size);
         flex-shrink: 0;
+//         margin-bottom: var(--sidebar-element-separation);
 
         .site-logo {
             width: 100%;
@@ -133,11 +137,12 @@
     .site-name {
         color: var(--accent-color);
         margin: 0;
-        font-size: 1.6rem;
+        font-size: 3rem;
+        font-family: var(--site-title-font-family);
 
-        @include respond(2xl) {
-            font-size: 1.8rem;
-        }
+//         @include respond(2xl) {
+//             font-size: 1.8rem;
+//         }
     }
 
     .site-description {
@@ -145,6 +150,8 @@
         font-weight: normal;
         margin: 0;
         font-size: 1.4rem;
+//         margin: 10px 0;
+//         font-size: 1.6rem;
 
         @include respond(2xl) {
             font-size: 1.6rem;
@@ -152,8 +159,24 @@
     }
 }
 
+// .sidebar {
+//     .widget {
+//         margin-bottom: var(--section-separation);
+//         margin-top: var(--section-separation);
+//
+//         &:not(:last-of-type):after {
+//             content: "";
+//             width: 100px;
+//             height: 2px;
+//             background-color: var(--body-text-color);
+//             display: block;
+//             margin-top: var(--section-separation);
+//         }
+//     }
+// }
+
 [data-scheme="dark"] {
-    #dark-mode-toggle {
+    #dark-mode-toggle-left, #dark-mode-toggle-right {
         color: var(--accent-color);
         font-weight: 700;
 
@@ -167,7 +190,7 @@
     }
 }
 
-#dark-mode-toggle {
+#dark-mode-toggle-left, #dark-mode-toggle-right {
     margin-top: auto;
     color: var(--body-text-color);
     display: flex;

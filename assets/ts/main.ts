@@ -1,12 +1,8 @@
 /*!
-*   Hugo Theme Stack
-*
-*   @author: Jimmy Cai
-*   @website: https://jimmycai.com
-*   @link: https://github.com/CaiJimmy/hugo-theme-stack
+*   Hugo Stack Min
 */
-import StackGallery from "ts/gallery";
-import { getColor } from 'ts/color';
+// import StackGallery from "ts/gallery";
+// import { getColor } from 'ts/color';
 import menu from 'ts/menu';
 import createElement from 'ts/createElement';
 import StackColorScheme from 'ts/colorScheme';
@@ -22,7 +18,7 @@ let Stack = {
 
         const articleContent = document.querySelector('.article-content') as HTMLElement;
         if (articleContent) {
-            new StackGallery(articleContent);
+//             new StackGallery(articleContent);
             setupSmoothAnchors();
             setupScrollspy();
         }
@@ -37,21 +33,21 @@ let Stack = {
                     if (!entry.isIntersecting) return;
                     observer.unobserve(entry.target);
 
-                    const articles = entry.target.querySelectorAll('article.has-image');
-                    articles.forEach(async articles => {
-                        const image = articles.querySelector('img'),
-                            imageURL = image.src,
-                            key = image.getAttribute('data-key'),
-                            hash = image.getAttribute('data-hash'),
-                            articleDetails: HTMLDivElement = articles.querySelector('.article-details');
-
-                        const colors = await getColor(key, hash, imageURL);
-
-                        articleDetails.style.background = `
-                        linear-gradient(0deg, 
-                            rgba(${colors.DarkMuted.rgb[0]}, ${colors.DarkMuted.rgb[1]}, ${colors.DarkMuted.rgb[2]}, 0.5) 0%, 
-                            rgba(${colors.Vibrant.rgb[0]}, ${colors.Vibrant.rgb[1]}, ${colors.Vibrant.rgb[2]}, 0.75) 100%)`;
-                    })
+//                     const articles = entry.target.querySelectorAll('article.has-image');
+//                     articles.forEach(async articles => {
+//                         const image = articles.querySelector('img'),
+//                             imageURL = image.src,
+//                             key = image.getAttribute('data-key'),
+//                             hash = image.getAttribute('data-hash'),
+//                             articleDetails: HTMLDivElement = articles.querySelector('.article-details');
+//
+//                         const colors = await getColor(key, hash, imageURL);
+//
+//                         articleDetails.style.background = `
+//                         linear-gradient(0deg,
+//                             rgba(${colors.DarkMuted.rgb[0]}, ${colors.DarkMuted.rgb[1]}, ${colors.DarkMuted.rgb[2]}, 0.5) 0%,
+//                             rgba(${colors.Vibrant.rgb[0]}, ${colors.Vibrant.rgb[1]}, ${colors.Vibrant.rgb[2]}, 0.75) 100%)`;
+//                     })
                 })
             });
 
@@ -91,7 +87,8 @@ let Stack = {
             });
         });
 
-        new StackColorScheme(document.getElementById('dark-mode-toggle'));
+        new StackColorScheme(document.getElementById('dark-mode-toggle-left'));
+        new StackColorScheme(document.getElementById('dark-mode-toggle-right'));
     }
 }
 

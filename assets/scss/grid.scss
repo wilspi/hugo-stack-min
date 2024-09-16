@@ -5,14 +5,20 @@
     .left-sidebar {
         order: -3;
         max-width: var(--left-sidebar-max-width);
+
+        /// Dont display left sidebar when min-width: md
+        @include respond(md) {
+            display: none;
+        }
+
     }
 
     .right-sidebar {
         order: -1;
         max-width: var(--right-sidebar-max-width);
 
-        /// Display right sidebar when min-width: lg
-        @include respond(lg) {
+        /// Display right sidebar when min-width: md
+        @include respond(md) {
             display: flex;
         }
     }
@@ -69,6 +75,24 @@
         }
     }
 
+//     &.align-items--flex-start {
+//         align-items: flex-start;
+//     }
+//
+//     .grow {
+//         flex-grow: 1;
+//     }
+//
+//     .do-not-shrink {
+//         flex-shrink: 0;
+//     }
+//
+//     .do-not-overflow {
+//         min-width: 0;
+//         flex-shrink: 1;
+//         max-width: 100%;
+//     }
+
     .full-width {
         width: 100%;
     }
@@ -94,7 +118,7 @@ main.main {
     padding: 0 15px;
     gap: var(--section-separation);
     padding-top: var(--main-top-padding);
-    
+
     @include respond(md) {
         padding: 0 20px;
     }

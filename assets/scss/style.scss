@@ -1,12 +1,9 @@
 /*!
-*   Hugo Theme Stack
-*
-*   @author: Jimmy Cai
-*   @website: https://jimmycai.com
-*   @link: https://github.com/CaiJimmy/hugo-theme-stack
+*   Hugo Stack Min
 */
 
 @import "breakpoints.scss";
+@import "fonts.scss";
 @import "variables.scss";
 @import "grid.scss";
 
@@ -19,6 +16,7 @@
 @import "partials/pagination.scss";
 @import "partials/sidebar.scss";
 @import "partials/base.scss";
+@import "partials/layout/archives.scss";
 @import "partials/layout/article.scss";
 @import "partials/layout/list.scss";
 @import "partials/layout/404.scss";

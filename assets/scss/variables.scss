@@ -11,26 +11,24 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
         --main-top-padding: 50px;
     }
 
-    --body-background: #f5f5fa;
-
-    --accent-color: #34495e;
-    --accent-color-darker: #2c3e50;
-    --accent-color-text: #fff;
-    --body-text-color: #707070;
-
     --tag-border-radius: 4px;
-
     --section-separation: 40px;
 
+    --body-background: #a9a9a9;
+    --accent-color: #303030;
+    --accent-color-darker: #000;
+    --accent-color-text: #fff;
+    --body-text-color: #444444;
     --scrollbar-thumb: hsl(0, 0%, 85%);
     --scrollbar-track: var(--body-background);
 
     &[data-scheme="dark"] {
-        --body-background: #303030;
-        --accent-color: #ecf0f1;
-        --accent-color-darker: #bdc3c7;
+        --body-background: #121212;
+        --accent-color: #d2d2d2;
+        --accent-color-darker: #888;
         --accent-color-text: #000;
-        --body-text-color: rgba(255, 255, 255, 0.7);
+        --body-text-color: #888;
+//         --scrollbar-thumb: #424242;
         --scrollbar-thumb: hsl(0, 0%, 40%);
         --scrollbar-track: var(--body-background);
     }
@@ -40,27 +38,34 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 *   Global font family
 */
 :root {
+
+//     @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+//     font-family: 'Lobster', sans-serif;
+//
+//     @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+//     font-family: 'Josefin Sans', sans-serif;
+
     --sys-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Droid Sans", "Helvetica Neue";
     --zh-font-family: "PingFang SC", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei";
 
-    --base-font-family: "Lato", var(--sys-font-family), var(--zh-font-family), sans-serif;
-    --code-font-family: Menlo, Monaco, Consolas, "Courier New", var(--zh-font-family), monospace;
+    --base-font-family: 'Noto Sans', "Lato", var(--sys-font-family), var(--zh-font-family), sans-serif;
+    --code-font-family: "Fira Code", Menlo, Monaco, Consolas, "Courier New", var(--zh-font-family), monospace;
+    --site-title-font-family: 'Pacifico', cursive;
 }
 
 /*
 *   Card style
 */
 :root {
-    --card-background: #fff;
-    --card-background-selected: #eaeaea;
-
+    --card-background: #f9f9f9;
+    --card-background-opaque: rgba(249, 249, 249, 0.3);
+    --card-background-selected: #dadada;
     --card-text-color-main: #000;
-    --card-text-color-secondary: #747474;
-    --card-text-color-tertiary: #767676;
+    --card-text-color-secondary: #646464;
+    --card-text-color-tertiary: #909090;
     --card-separator-color: rgba(218, 218, 218, 0.5);
 
     --card-border-radius: 10px;
-
     --card-padding: 20px;
 
     @include respond(md) {
@@ -78,11 +83,12 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
     }
 
     &[data-scheme="dark"] {
-        --card-background: #424242;
+        --card-background: #323232;
+        --card-background-opaque: rgba(50, 50 ,50, 0.3);
         --card-background-selected: rgba(255, 255, 255, 0.16);
-        --card-text-color-main: rgba(255, 255, 255, 0.9);
-        --card-text-color-secondary: rgba(255, 255, 255, 0.7);
-        --card-text-color-tertiary: rgba(255, 255, 255, 0.5);
+        --card-text-color-main: #f9f9f9;
+        --card-text-color-secondary: #d1d1d1;
+        --card-text-color-tertiary: #a1a1a1;
         --card-separator-color: rgba(255, 255, 255, 0.12);
     }
 }
@@ -91,7 +97,7 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 *   Article content font settings
 */
 :root {
-    --article-font-family: var(--base-font-family);
+    --article-font-family: "Manrope", var(--base-font-family);
     --article-font-size: 1.6rem;
 
     @include respond(md) {
@@ -120,13 +126,11 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
     --code-background-color: rgba(0, 0, 0, 0.12);
     --code-text-color: #808080;
 
-    --table-border-color: #dadada;
-    --tr-even-background-color: #efefee;
-
-    --kbd-border-color: #dadada;
+    --table-border-color: #bababa;
+    --tr-even-background-color: #dfdfdf;
 
     &[data-scheme="dark"] {
-        --code-background-color: #272822;
+        --code-background-color: #242424;
         --code-text-color: rgba(255, 255, 255, 0.9);
 
         --table-border-color: #717171;
@@ -149,14 +153,14 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 }
 
 [data-scheme="light"] {
-    --pre-text-color: #272822;
-    --pre-background-color: #fafafa;
+    --pre-text-color: #242424;
+    --pre-background-color: #d5d5d5;
     @import "partials/highlight/light.scss";
 }
 
 [data-scheme="dark"] {
-    --pre-text-color: #f8f8f2;
-    --pre-background-color: #272822;
+    --pre-text-color: #e1e1e2;
+    --pre-background-color: #242424;
     @import "partials/highlight/dark.scss";
 }
 
